@@ -11,6 +11,8 @@ let GrassTexture
 let Windows = []
 let sidewalls = []
 let bill
+let Buildz = 485
+let backwallz = 40
 
 
 
@@ -113,11 +115,11 @@ function createWalls() {
 
     //200px = 1 meter = scale
 
-    walls.push({ x: -20000, y: 250, z: 0, width: 80000, height: 5, depth: 40000 }); // Grass stuff
-    Pavement.push({ x: 405, y: 240, z: -120, width: 3200, height: 20, depth: 300 }); // Pavemnt
-    Pavement.push({ x: 405, y: 240, z: 1120, width: 10000, height: 20, depth: 300 }); // Pavemnt
-    Road.push({ x: 405, y: 240, z: 500, width: 10000, height: 10, depth: 1000 }); // Road
-    Road.push({ x: -1700, y: 240, z: -2500, width: 1000, height: 10, depth: 5000 }); // Road
+    walls.push({ x:4000, y: 250, z: 2000, width: 8000, height: 5, depth: 4000 }); // Grass stuff
+   // Pavement.push({ x: 905, y: 240, z: 420, width: 3200, height: 20, depth: 300 }); // Pavemnt
+    Pavement.push({ x: 905, y: 240, z: 620, width: 10000, height: 20, depth: 300 }); // Pavemnt
+    Road.push({ x: 905, y: 240, z: 1000, width: 10000, height: 10, depth: 1000 }); // Road
+    Road.push({ x: -1200, y: 240, z: -2000, width: 1000, height: 10, depth: 5000 }); // Road
 
     /* Create the walls of the first room
     walls.push({ x: 0, y: 0.3,  z: -250, width: 500, height: 500, depth: 5 }); // Back wall
@@ -134,69 +136,69 @@ function createWalls() {
    
 // x changes by 805 pixels, y no change and z depends on how far back i want
 
-    Floor.push({ x: -805, y: 150,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: -805, y: -50 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: -805, y: -250,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: -805, y: -450 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: -805, y: -650,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: -805, y: -850 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: -805, y: -1050,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: -805, y: -1250 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: -805, y: -1450,  z: -285, width: 800, height: 200, depth:30 }); 
+    Floor.push({ x: 400, y: 150,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 400, y: -50 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 400, y: -250,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 400, y: -450 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 400, y: -650,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 400, y: -850 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 400, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 400, y: -1250 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 400, y: -1450,  z: Buildz, width: 800, height: 200, depth:30 }); 
 
-    sidewalls.push({ x: -405, y: -550 ,  z: -485, width: 10, height: -2000, depth:500 }); 
-    sidewalls.push({ x: -1205, y: -550 ,  z: -485, width: 10, height: -2000, depth:500 }); 
-    sidewalls.push({ x: -805, y: -550,  z: -720, width: 800, height: 2000, depth:30 }); 
-    sidewalls.push({ x: -805, y: -1545 ,  z: -485, width: 800, height: 10, depth:-485 });     
+    sidewalls.push({ x: -405, y: -550 ,  z: 265, width: 10, height: -2000, depth:500 }); 
+    sidewalls.push({ x: -1205, y: -550 ,  z: 265, width: 10, height: -2000, depth:500 }); 
+    sidewalls.push({ x: -805, y: -550,  z: backwallz, width: 800, height: 2000, depth:30 }); 
+    sidewalls.push({ x: -805, y: -1545 ,  z: 265, width: 800, height: 10, depth:-485 });     
 
     //---------------------------------------------------------------------------
-    walls.push({ x: 0, y: 150,  z: -250, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 0, y: -50 ,  z: -255, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 0, y: -250,  z: -250, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 0, y: -450 ,  z: -255, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 0, y: -650,  z: -250, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 0, y: -850 ,  z: -255, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 0, y: -1050,  z: -250, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 0, y: -1250 ,  z: -255, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 0, y: -1450,  z: -250, width: 800, height: 200, depth:30 }); 
+    walls.push({ x: 1200, y: 150,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 1200, y: -50 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 1200, y: -250,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 1200, y: -450 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 1200, y: -650,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 1200, y: -850 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 1200, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 1200, y: -1250 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 1200, y: -1450,  z: Buildz, width: 800, height: 200, depth:30 }); 
 
 
-    sidewalls.push({ x: 405, y: -550 ,  z: -485, width: 10, height: -2000, depth:500 }); 
-    sidewalls.push({ x: -405, y: -550 ,  z: -485, width: 10, height: -2000, depth:500 }); 
-    sidewalls.push({ x: 0, y: -550,  z: -720, width: 800, height: 2000, depth:30 }); 
-    sidewalls.push({ x: 0, y: -1545 ,  z: -485, width: 800, height: 10, depth:-485 }); 
+    sidewalls.push({ x: 405, y: -550 ,  z: 265, width: 10, height: -2000, depth:500 }); 
+    sidewalls.push({ x: -405, y: -550 ,  z: 265, width: 10, height: -2000, depth:500 }); 
+    sidewalls.push({ x: 0, y: -550,  z: backwallz, width: 800, height: 2000, depth:30 }); 
+    sidewalls.push({ x: 0, y: -1545 ,  z: 265, width: 800, height: 10, depth:-485 }); 
     
      //---------------------------------------------------------------------------
-    walls.push({ x: 805, y: 150,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 805, y: -50 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 805, y: -250,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 805, y: -450 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 805, y: -650,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 805, y: -850 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 805, y: -1050,  z: -285, width: 800, height: 200, depth:30 }); 
-    Windows.push({ x: 805, y: -1250 ,  z: -280, width: 800, height: 200, depth:10 }); 
-    walls.push({ x: 805, y: -1450,  z: -285, width: 800, height: 200, depth:30 }); 
+    walls.push({ x: 2000, y: 150,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 2000, y: -50 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 2000, y: -250,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 2000, y: -450 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 2000, y: -650,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 2000, y: -850 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 2000, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 }); 
+    Windows.push({ x: 2000, y: -1250 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+    walls.push({ x: 2000, y: -1450,  z: Buildz, width: 800, height: 200, depth:30 }); 
 
-    sidewalls.push({ x: 1205, y: -550 ,  z: -485, width: 10, height: -2000, depth:500 }); 
-    sidewalls.push({ x: 405, y: -550 ,  z: -485, width: 10, height: -2000, depth:500 }); 
-    sidewalls.push({ x: 805, y: -550,  z: -720, width: 800, height: 2000, depth:30 }); 
-    sidewalls.push({ x: 805, y: -1545 ,  z: -485, width: 800, height: 10, depth:-485 }); 
+    sidewalls.push({ x: 1205, y: -550 ,  z: 265, width: 10, height: -2000, depth:500 }); 
+    sidewalls.push({ x: 405, y: -550 ,  z: 265, width: 10, height: -2000, depth:500 }); 
+    sidewalls.push({ x: 805, y: -550,  z: backwallz, width: 800, height: 2000, depth:30 }); 
+    sidewalls.push({ x: 805, y: -1545 ,  z: 265, width: 800, height: 10, depth:-485 }); 
 //---------------------------------------------------------------------------------
-walls.push({ x: 1610, y: 150,  z: -285, width: 800, height: 200, depth:30 }); 
-Windows.push({ x: 1610, y: -50 ,  z: -280, width: 800, height: 200, depth:10 }); 
-walls.push({ x: 1610, y: -250,  z: -285, width: 800, height: 200, depth:30 }); 
-Windows.push({ x: 1610, y: -450 ,  z: -280, width: 800, height: 200, depth:10 }); 
-walls.push({ x: 1610, y: -650,  z: -285, width: 800, height: 200, depth:30 }); 
-Windows.push({ x: 1610, y: -850 ,  z: -280, width: 800, height: 200, depth:10 }); 
-walls.push({ x: 1610, y: -1050,  z: -285, width: 800, height: 200, depth:30 }); 
+walls.push({ x: 2800, y: 150,  z: Buildz, width: 800, height: 200, depth:30 }); 
+Windows.push({ x: 2800, y: -50 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+walls.push({ x: 2800, y: -250,  z: Buildz, width: 800, height: 200, depth:30 }); 
+Windows.push({ x: 2800, y: -450 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+walls.push({ x: 2800, y: -650,  z: Buildz, width: 800, height: 200, depth:30 }); 
+Windows.push({ x: 2800, y: -850 ,  z: Buildz, width: 800, height: 200, depth:10 }); 
+walls.push({ x: 2800, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 }); 
 
 
 
    
 
-    sidewalls.push({ x: 2010, y: -350 ,  z: -485, width: 10, height: -1605, depth:500 }); 
-    sidewalls.push({ x: 1600, y: -350,  z: -720, width: 800, height: -1605, depth:30 }); 
-    sidewalls.push({ x: 1600, y: -1150 ,  z: -485, width: 800, height: 10, depth:-485 }); 
+    sidewalls.push({ x: 2010, y: -350 ,  z: 265, width: 10, height: -1605, depth:500 }); 
+    sidewalls.push({ x: 1600, y: -350,  z: backwallz, width: 800, height: -1605, depth:30 }); 
+    sidewalls.push({ x: 1600, y: -1150 ,  z: 265, width: 800, height: 10, depth:-485 }); 
 
     //-----------------------------------------------------------------------------------
 
