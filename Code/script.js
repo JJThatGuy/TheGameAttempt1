@@ -37,8 +37,9 @@ function setup() {
         x: 0,
         y: -50,
         z: 2000,
-        speed: 30,
+        speed: 10,
         angle:0
+        
     
     };
 
@@ -216,9 +217,10 @@ walls.push({ x: 2800, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 })
 
 
 function handleMovement() {
-    if (player.angle < 90){
+    if (player.angle < 90 || player.angle > 270){
         if (keyIsDown(87)) {
             let forwardZ = cos(player.angle) * player.speed;
+           // forwardZ=forwardZ * 10
             player.z -= forwardZ;
   
             
@@ -228,6 +230,7 @@ function handleMovement() {
       }
       if (keyIsDown(83)) { // S key
           let backwardZ = cos(player.angle) * player.speed ;
+         // backwardZ = backwardZ * 10
           player.z += backwardZ;
   
   
@@ -236,9 +239,9 @@ function handleMovement() {
           // player.x -= backwardX;
       }
     }
-    if (player.angle < 270){
+    if (player.angle > 90 && player.angle < 270){
         if (keyIsDown(87)) {
-            let forwardZ = cos(player.angle) * player.speed;
+            let forwardZ = cos(player.angle) * -player.speed;
             forwardZ=forwardZ * 10
             player.z += forwardZ;
   
@@ -248,7 +251,7 @@ function handleMovement() {
             // player.x += forwardX;
       }
       if (keyIsDown(83)) { // S key
-          let backwardZ = cos(player.angle) * player.speed ;
+          let backwardZ = cos(player.angle) * -player.speed ;
           backwardZ = backwardZ * 10
           player.z -= backwardZ;
   
@@ -261,10 +264,10 @@ function handleMovement() {
 
     }
     if (keyIsDown(65)) { // A key (turn left)
-        player.angle += 1;
+        player.angle += 3.14;
     }
     if (keyIsDown(68)) { // D key (turn right)
-          player.angle -= 1;
+          player.angle -= 3.14;
       }
 
     
