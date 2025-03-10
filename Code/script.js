@@ -50,8 +50,9 @@ function draw() {
     background(220);
    
     // Reset the transform
-    translate(player.x, -player.y, -player.z); 
     rotateY(player.angle);
+    translate(player.x, -player.y, -player.z); 
+    
     
    
     // Draw the walls
@@ -264,10 +265,10 @@ function handleMovement() {
 
     }
     if (keyIsDown(65)) { // A key (turn left)
-        player.angle += 3.14;
+        player.angle += 10;
     }
     if (keyIsDown(68)) { // D key (turn right)
-          player.angle -= 3.14;
+          player.angle -= 10;
       }
 
     
