@@ -34,10 +34,10 @@ function setup() {
    
    
     player = {
-        x: 0,
+        x: -7500,
         y: -50,
-        z: 2000,
-        speed: 10,
+        z: 7500,
+        speed: 15,
         angle:0
         
     
@@ -47,7 +47,8 @@ function setup() {
 }
 
 function draw() {
-    background(220);
+    background("#87ceeb");
+   // mover.applyForce(gravity)
    
     // Reset the transform
     rotateY(player.angle);
@@ -117,7 +118,7 @@ function createWalls() {
 
     //200px = 1 meter = scale
 
-    walls.push({ x:4000, y: 250, z: 2000, width: 8000, height: 5, depth: 4000 }); // Grass stuff
+    walls.push({ x:40000, y: 250, z: 40000, width: 80000, height: 5, depth: 80000 }); // Grass stuff
    // Pavement.push({ x: 905, y: 240, z: 420, width: 3200, height: 20, depth: 300 }); // Pavemnt
     Pavement.push({ x: 905, y: 240, z: 620, width: 10000, height: 20, depth: 300 }); // Pavemnt
     Road.push({ x: 905, y: 240, z: 1000, width: 10000, height: 10, depth: 1000 }); // Road
@@ -220,7 +221,7 @@ walls.push({ x: 2800, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 })
 function handleMovement() {
     if (player.angle < 90 || player.angle > 270){
         if (keyIsDown(87)) {
-            let forwardZ = cos(player.angle) * player.speed;
+            let forwardZ = cos(player.angle) + player.speed;
            // forwardZ=forwardZ * 10
             player.z -= forwardZ;
   
@@ -230,9 +231,9 @@ function handleMovement() {
             // player.x += forwardX;
       }
       if (keyIsDown(83)) { // S key
-          let backwardZ = cos(player.angle) * player.speed ;
+          let backwardZ = cos(player.angle) - player.speed ;
          // backwardZ = backwardZ * 10
-          player.z += backwardZ;
+          player.z -= backwardZ;
   
   
   
@@ -242,8 +243,8 @@ function handleMovement() {
     }
     if (player.angle > 90 && player.angle < 270){
         if (keyIsDown(87)) {
-            let forwardZ = cos(player.angle) * -player.speed;
-            forwardZ=forwardZ * 10
+            let forwardZ = cos(player.angle) + (-player.speed);
+            //forwardZ=forwardZ * 10
             player.z += forwardZ;
   
             
@@ -252,9 +253,9 @@ function handleMovement() {
             // player.x += forwardX;
       }
       if (keyIsDown(83)) { // S key
-          let backwardZ = cos(player.angle) * -player.speed ;
-          backwardZ = backwardZ * 10
-          player.z -= backwardZ;
+          let backwardZ = cos(player.angle) - (-player.speed) ;
+          //backwardZ = backwardZ * 10
+          player.z += backwardZ;
   
   
   
@@ -265,10 +266,10 @@ function handleMovement() {
 
     }
     if (keyIsDown(65)) { // A key (turn left)
-        player.angle += 10;
+        player.angle += 2;
     }
     if (keyIsDown(68)) { // D key (turn right)
-          player.angle -= 10;
+          player.angle -= 2;
       }
 
     
@@ -297,9 +298,15 @@ function handleMovement() {
       if (keyIsDown(68)) { // D key (turn right)
           player.angle -= 1;
       }
-
+*/
       if (keyIsDown(32)) { // space bar (go up)
         player.y -= 30
     }
-   */
+   
 }
+
+/* To do list (in order):
+    - be able to move on an angle
+       *need to code mouse movement (where mouse is,camera follows)
+       *need to fix speed
+*/
