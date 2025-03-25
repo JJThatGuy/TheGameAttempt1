@@ -266,10 +266,10 @@ function handleMovement() {
 
     }
     if (keyIsDown(65)) { // A key (turn left)
-        player.angle += 2;
+        player.angle -= 2;
     }
     if (keyIsDown(68)) { // D key (turn right)
-          player.angle -= 2;
+          player.angle += 2;
       }
 
     
