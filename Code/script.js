@@ -207,8 +207,10 @@ function handleMovement() {
     if (player.angle < 90 || player.angle > 270){
         if (keyIsDown(87)) {
             let forwardZ = cos(player.angle) + player.speed;
+            let forwardX = sin(player.angle) + (-player.speed);
            // forwardZ=forwardZ * 10
             player.z -= forwardZ;
+            player.x += forwardX
   
             
             
@@ -217,8 +219,10 @@ function handleMovement() {
       }
       if (keyIsDown(83)) { // S key
           let backwardZ = cos(player.angle) - player.speed ;
+          let backwardX = sin(player.angle) + (-player.speed);
          // backwardZ = backwardZ * 10
           player.z -= backwardZ;
+          player.x += backwardX
   
   
   
@@ -229,8 +233,10 @@ function handleMovement() {
     if (player.angle > 90 && player.angle < 270){
         if (keyIsDown(87)) {
             let forwardZ = cos(player.angle) + (-player.speed);
+            let forwardX = sin(player.angle) + (-player.speed);
             //forwardZ=forwardZ * 10
             player.z += forwardZ;
+            player.x += forwardX
   
             
             
