@@ -62,7 +62,7 @@ function draw() {
         translate(wall.x, wall.y, wall.z);
         box(wall.width, wall.height, wall.depth);
         pop();
-        texture(textures);
+        //texture(textures);
     }
   
     for (let wall of Windows) {
@@ -80,7 +80,7 @@ function draw() {
         translate(wall.x, wall.y, wall.z);
         box(wall.width, wall.height, wall.depth);
         pop();
-        texture(GrassTexture);
+        //texture(GrassTexture);
     }
 
     for (let wall of Pavement) {
@@ -119,6 +119,7 @@ function createWalls() {
     //200px = 1 meter = scale
 
     walls.push({ x:40000, y: 250, z: 40000, width: 80000, height: 5, depth: 80000 }); // Grass stuff
+  
     Pavement.push({ x: 905, y: 240, z: 620, width: 10000, height: 20, depth: 300 }); // Pavemnt
     Road.push({ x: 905, y: 240, z: 1000, width: 10000, height: 10, depth: 1000 }); // Road
     Road.push({ x: -1200, y: 240, z: -2000, width: 1000, height: 10, depth: 5000 }); // Road
@@ -204,92 +205,24 @@ walls.push({ x: 2800, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 })
 
 
 function handleMovement() {
-    if (player.angle < 90 || player.angle > 270){
-        if (keyIsDown(87)) {
-            let forwardZ = cos(player.angle) + player.speed;
-            let forwardX = sin(player.angle) + (-player.speed);
-           // forwardZ=forwardZ * 10
-            player.z -= forwardZ;
-            player.x += forwardX
-  
-            
-            
-            //let forwardZ = sin(player.angle) * player.speed ;
-            // player.x += forwardX;
-      }
-      if (keyIsDown(83)) { // S key
-          let backwardZ = cos(player.angle) - player.speed ;
-          let backwardX = sin(player.angle) + (-player.speed);
-         // backwardZ = backwardZ * 10
-          player.z -= backwardZ;
-          player.x += backwardX
-  
-  
-  
-          //let backwardZ = sin(player.angle) * player.speed 
-          // player.x -= backwardX;
-      }
-    }
-    if (player.angle > 90 && player.angle < 270){
-        if (keyIsDown(87)) {
-            let forwardZ = cos(player.angle) + (-player.speed);
-            let forwardX = sin(player.angle) + (-player.speed);
-            //forwardZ=forwardZ * 10
-            player.z += forwardZ;
-            player.x += forwardX
-  
-            
-            
-            //let forwardZ = sin(player.angle) * player.speed ;
-            // player.x += forwardX;
-      }
-      if (keyIsDown(83)) { // S key
-          let backwardZ = cos(player.angle) - (-player.speed) ;
-          //backwardZ = backwardZ * 10
-          player.z += backwardZ;
-  
-  
-  
-          //let backwardZ = sin(player.angle) * player.speed 
-          // player.x -= backwardX;
-      }
-      
 
+    if (player.angle <= 90 && player.angle >= 0 ){
+        if (KeyIsDown(87) && KeyIsDown(68)){
+            let forwardX = player.angle*cos(player.speed)
+            let RightForwardZ = player.angle += 2
+             player.x += forwardX
+             player.z += 
+             
+
+        
+        }
     }
-    if (keyIsDown(65)) { // A key (turn left)
-        player.angle -= 2;
-    }
-    if (keyIsDown(68)) { // D key (turn right)
-          player.angle += 2;
-      }
+    
 
     
     
 
-   /* if (keyIsDown(87)) { // W key
-
-        //let forwardZ = sin(player.angle) * player.speed ;
-        let forwardZ = cos(player.angle) * player.speed;
-  
-  
-         // player.x += forwardX;
-          player.z -= forwardZ;
-  
-  
-      }
-      if (keyIsDown(83)) { // S key
-          //let backwardZ = sin(player.angle) * player.speed ;
-          let backwardZ = cos(player.angle) * player.speed ;
-         // player.x -= backwardX;
-          player.z += backwardZ;
-      }
-      if (keyIsDown(65)) { // A key (turn left)
-          player.angle += 1;
-      }
-      if (keyIsDown(68)) { // D key (turn right)
-          player.angle -= 1;
-      }
-*/
+   
       if (keyIsDown(32)) { // space bar (go up)
         player.y -= 30
     }
