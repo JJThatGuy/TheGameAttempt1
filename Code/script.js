@@ -206,17 +206,29 @@ walls.push({ x: 2800, y: -1050,  z: Buildz, width: 800, height: 200, depth:30 })
 
 function handleMovement() {
 
+
+
     if (player.angle <= 90 && player.angle >= 0 ){
-        if (KeyIsDown(87) && KeyIsDown(68)){
+
+        if (KeyIsDown(87) && KeyIsDown(68)){     // W & D
             let forwardX = player.angle*cos(player.speed)
             let RightForwardZ = player.angle += 2
              player.x += forwardX
-             player.z += 
+             player.z += RightForwardZ
+
+             if (KeyIsDown(87) && KeyIsDown(66)){     // W & S
+            let forwardX = player.angle*cos(player.speed)
+            let LeftForwardZ = player.angle += 2
+             player.x += forwardX
+             player.z += LeftForwardZ
+
+
              
 
         
         }
     }
+}
     
 
     
@@ -226,8 +238,7 @@ function handleMovement() {
       if (keyIsDown(32)) { // space bar (go up)
         player.y -= 30
     }
-   
-}
+
 
 /* To do list (in order):
     - be able to move on an angle
